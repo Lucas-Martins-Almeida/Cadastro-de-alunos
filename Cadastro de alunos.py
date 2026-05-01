@@ -8,7 +8,6 @@ def classificar(nota): # cria uma função chamada classificar que recebe a nota
     else:#se nenhuma condição acima acontecer
         return "Reprovado" # retorna reprovado
 
-
 def media_turma(lista): # cria função para calcular média da turma
     soma = 0 # variável soma começa em 0
     for aluno in lista: # percorre cada aluno dentro da lista
@@ -25,8 +24,6 @@ while True:  # laço principal do cadastro
         else: #se nome inválido
             print("Nome inválido. Digite novamente.")  # avisa erro
 
-    
-
     while True: # inicia laço para validar idade
         try: # tenta executar
             idade = int(input("Digite a idade: "))  # pede idade e converte para inteiro
@@ -37,7 +34,6 @@ while True:  # laço principal do cadastro
         except:# se der erro de digitação
             print("Digite apenas números inteiros!")# mostra mensagem
 
-    
     while True:# inicia laço para validar nota
         try:# tenta executar
             nota = float(input("Digite a nota: "))# pede nota e converte para decimal
@@ -58,10 +54,8 @@ while True:  # laço principal do cadastro
     }
 
     alunos.append(aluno) # adiciona dicionário dentro da lista alunos
-
     sair = False # variável começa falsa, usada para controlar encerramento do cadastro
-    alunos.append(aluno)  # adiciona dicionário dentro da lista alunos
-
+    
     while True:# inicia laço para validar a resposta do usuário
         continuar = input("Deseja cadastrar outro aluno? (s/n): ").strip().lower()# pede resposta, remove espaços e converte para minúsculo
 
