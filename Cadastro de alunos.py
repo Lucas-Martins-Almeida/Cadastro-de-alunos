@@ -20,7 +20,7 @@ while True:  # laço principal do cadastro
     while True:  # laço para validar o nome
         nome = input("Digite o nome do aluno: ").strip()  # pede o nome
 
-        if nome.replace(" ", "").isalpha():  # verifica se tem apenas letras
+        if nome.replace(" ", "").isalpha():  # verifica se tem apenas letras 
             break  # sai do laço do nome se estiver correto
         else: #se nome inválido
             print("Nome inválido. Digite novamente.")  # avisa erro
@@ -59,10 +59,24 @@ while True:  # laço principal do cadastro
 
     alunos.append(aluno) # adiciona dicionário dentro da lista alunos
 
-    continuar = input("Deseja cadastrar outro aluno? (s/n): ").strip().lower()  # aceita S/N maiúsculo e remove espaços
+    sair = False # variável começa falsa, usada para controlar encerramento do cadastro
+    alunos.append(aluno)  # adiciona dicionário dentro da lista alunos
 
-    if continuar == "n":# se resposta for n
-        break# encerra laço principal
+    while True:# inicia laço para validar a resposta do usuário
+        continuar = input("Deseja cadastrar outro aluno? (s/n): ").strip().lower()# pede resposta, remove espaços e converte para minúsculo
+
+        if continuar in ["s", "sim"]:# verifica se usuário deseja continuar cadastrando
+            break  # sai do laço da resposta
+
+        elif continuar in ["n", "nao", "não"]: # verifica se usuário deseja encerrar cadastro
+            sair = True # altera variável para indicar saída do programa
+            break # sai do laço da pergunta
+
+        else: # caso digite algo diferente das opções válidas
+            print("Digite apenas S/N, Sim ou Não.")# exibe mensagem de erro
+
+    if sair: # verifica se usuário escolheu encerrar
+        break # encerra o laço principal do cadastro
 
 print("\n--- RELATÓRIO FINAL ---")# pula linha e mostra título
 
