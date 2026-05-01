@@ -31,7 +31,7 @@ while True:  # laço principal do cadastro
                 break# sai do laço da idade
             else:# se idade inválida
                 print("Idade inválida!")# mostra mensagem
-        except:# se der erro de digitação
+        except ValueError:# se der erro de digitação
             print("Digite apenas números inteiros!")# mostra mensagem
 
     while True:# inicia laço para validar nota
@@ -41,7 +41,7 @@ while True:  # laço principal do cadastro
                 break# sai do laço da nota
             else:# se nota inválida
                 print("Nota deve ser entre 0 e 10. Por favor Digite novamente")# mostra mensagem
-        except:# se usuário digitar errado
+        except ValueError:# se usuário digitar errado
             print("Oops, Digite apenas números!")# mostra mensagem
 
     situacao = classificar(nota)# chama função classificar e guarda resultado
